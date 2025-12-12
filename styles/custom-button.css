@@ -1,0 +1,184 @@
+/* ============================================
+   КАСТОМНАЯ КНОПКА "В КОРЗИНУ"
+   ============================================ */
+
+.custom-button {
+    /* Основные параметры кнопки */
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    
+    /* Текст */
+    font-family: "Play", sans-serif;
+    font-size: clamp(0.9rem, 1rem, 1.1rem);
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    
+    /* Отмена стандартных эффектов */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    
+    background: radial-gradient(
+        ellipse 50% 40% at center, 
+        rgba(115, 14, 14, 0.67) 0%,
+        rgba(115, 14, 14, 0.67) 60%,
+        rgba(115, 14, 14, 1) 100%
+    );
+
+    box-shadow: 
+        inset 0 0 3.6px rgba(97, 12, 12, 0.76),
+        inset 1.5px -1.5px 1.9px rgba(255, 255, 255, 0.43),
+        inset -1.5px 2px 4.5px rgba(255, 255, 255, 0.62);
+
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.custom-button:hover {
+    background: radial-gradient(
+        ellipse 60% 45% at center, 
+        rgba(115, 14, 14, 0.67) 0%,
+        rgba(115, 14, 14, 0.67) 15%,
+        rgba(115, 14, 14, 1) 70%,
+		rgba(115, 14, 14, 1) 100%
+    );
+    
+    box-shadow: 
+        inset 0 0 3.6px rgba(97, 12, 12, 0.76),
+        inset 1.5px -1.5px 1.9px rgba(255, 255, 255, 0.43),
+        inset -1.5px 2px 4.5px rgba(255, 255, 255, 0.62);
+}
+
+/* через градиент просто чтобы не мелькал белый при переключении стилей */
+.custom-button:active {
+    background: radial-gradient(
+        ellipse 50% 40% at center,  
+        rgba(115, 14, 14, 1) 0%,
+        rgba(115, 14, 14, 1) 100%
+    );
+    
+    box-shadow: 
+        inset 0 0 3.6px rgba(97, 12, 12, 0.76),
+        inset 1.5px -1.5px 1.9px rgba(255, 255, 255, 0.43),
+        inset -1.5px 2px 4.5px rgba(255, 255, 255, 0.62);
+}
+
+
+
+/* Маленькая кнопка */
+.custom-button-small {
+    width: 100px;
+    height: 25px;
+    border-radius: 8px;
+	
+    /* Текст */
+    font-family: "Play", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    text-decoration: none;
+	white-space: nowrap;
+    
+    /* Отмена стандартных эффектов */
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    
+    
+    /* Эллипс для маленькой кнопки */
+    background: radial-gradient(
+        ellipse 50% 40% at center,
+        rgba(115, 14, 14, 0.67) 0%,
+        rgba(115, 14, 14, 0.67) 60%,
+        rgba(115, 14, 14, 1) 100%
+    );
+	
+	box-shadow: 
+        inset 0 0 3.6px rgba(97, 12, 12, 0.76),
+        inset 1.5px -1.5px 1.9px rgba(255, 255, 255, 0.43),
+        inset -1.5px 2px 4.5px rgba(255, 255, 255, 0.62);
+}
+
+.custom-button-small:hover {
+    background: radial-gradient(
+        ellipse 60% 45% at center,
+        rgba(115, 14, 14, 0.67) 0%,
+        rgba(115, 14, 14, 0.67) 10%,
+        rgba(115, 14, 14, 1) 100%
+    );
+}
+
+.custom-button-small:active {
+    background: radial-gradient(
+        ellipse 50% 40% at center,  
+        rgba(115, 14, 14, 1) 0%,
+        rgba(115, 14, 14, 1) 100%
+    );
+    
+
+}
+
+/* ============================================
+   АДАПТИВНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+   ============================================ */
+
+@media (max-width: 768px) {
+    .custom-button {
+        width: 140px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 0.9rem;
+        
+		background: radial-gradient(
+			ellipse 50% 40% at center, 
+			rgba(115, 14, 14, 0.67) 0%,
+			rgba(115, 14, 14, 0.67) 60%,
+			rgba(115, 14, 14, 1) 100%
+		);
+    }
+    
+    .custom-button:hover {
+		background: radial-gradient(
+			ellipse 60% 45% at center, 
+			rgba(115, 14, 14, 0.67) 0%,
+			rgba(115, 14, 14, 0.67) 15%,
+			rgba(115, 14, 14, 1) 70%,
+			rgba(115, 14, 14, 1) 100%
+		);
+    }
+    
+    .custom-button-small {
+        width: 80px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.7rem;
+        
+		background: radial-gradient(
+			ellipse 50% 40% at center, 
+			rgba(115, 14, 14, 0.67) 0%,
+			rgba(115, 14, 14, 0.67) 60%,
+			rgba(115, 14, 14, 1) 100%
+		);
+    }
+    
+    .custom-button-small:hover {
+		background: radial-gradient(
+			ellipse 60% 45% at center, 
+			rgba(115, 14, 14, 0.67) 0%,
+			rgba(115, 14, 14, 0.67) 15%,
+			rgba(115, 14, 14, 1) 70%,
+			rgba(115, 14, 14, 1) 100%
+		);
+    }
+}
+	

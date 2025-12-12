@@ -1,0 +1,473 @@
+@font-face {
+    font-family: 'Porsche';
+    src: url('../fonts/Porsche Regular_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Play';
+    src: url('../fonts/Play-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --side-pad: clamp(40px, 14.5vw, 280px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* ========================= */
+header {
+    background-image: url('../imgs/header1.png');
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.header-content {
+    display: flex;
+    width: 100%;
+    padding-left: var(--side-pad);
+    padding-right: var(--side-pad);
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.header-logo,
+.header-nav {
+    flex: 1;
+    min-width: 300px;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 500px;
+}
+
+/* =================== */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav-link {
+    font-family: 'Porsche', serif;
+    font-size: clamp(24px, 3vw, 60px);
+    color: #000000;
+    margin-bottom: clamp(10px, 2vw, 20px);
+    position: relative;
+    line-height: 1;
+    padding: clamp(5px, 1.5vw, 10px) 15px;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.nav-link:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    background-clip: text;
+    -webkit-text-stroke: 10px transparent;
+}
+
+.nav-link:active,
+.nav-link.active {
+    background: linear-gradient(90deg, #04037B 0%, #FFFFFF 50%, #730E0E 100%);
+    color: #FFFFFF;
+    background-clip: text;
+    -webkit-text-stroke: 10px transparent;
+}
+
+/* =================== */
+#two-columns-section {
+    padding: clamp(40px, 8vw, 100px) var(--side-pad);
+    display: flex;
+    gap: clamp(20px, 4vw, 60px);
+    flex-wrap: wrap;
+    align-items: flex-start;
+    scroll-margin-top: 50px;
+}
+
+.column-left,
+.column-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#two-columns-section {
+    flex-direction: row;
+}
+
+.column-left {
+    order: 1;
+}
+
+.column-right {
+    order: 2;
+}
+
+.column-left {
+    flex: 1 1 400px;
+}
+
+.column-right {
+    flex: 0 1 350px;
+    min-width: 300px;
+}
+
+/* Левый столбец */
+.section-subtitle {
+    font-family: 'Porsche', serif;
+    font-size: clamp(20px, 2.5vw, 48px);
+    color: #730E0E;
+    margin-bottom: clamp(20px, 2vw, 30px);
+    text-align: left;
+    line-height: 1.2;
+}
+
+.description-text {
+    font-family: 'Play', sans-serif;
+    font-size: clamp(12px, 1.5vw, 16px);
+    line-height: 1.6;
+    margin-bottom: clamp(20px, 3vw, 40px);
+    color: #000000;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: clamp(15px, 2vw, 30px);
+    width: 90%;
+    max-width: 450px;
+    gap: clamp(3px, 1vw, 10px);
+}
+
+.action-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: clamp(3px, 1vw, 10px);
+}
+
+.text-arrow-group {
+    display: flex;
+    align-items: center;
+    gap: clamp(3px, 0.8vw, 8px);
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.row-text {
+    font-family: 'Play', sans-serif;
+    font-size: clamp(10px, 1.2vw, 14px);
+    color: #000000;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.row-arrow {
+    height: clamp(20px, 3vw, 45px);
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Правый столбец */
+.photo-container {
+    background-color: #04037B;
+    border-radius: 60px;
+    padding: clamp(15px, 3vw, 30px) clamp(15px, 3vw, 30px) clamp(8px, 1.5vw, 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    min-height: 400px;
+    max-width: 500px;
+    aspect-ratio: 3/3.5;
+}
+
+.photo-square {
+    width: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-bottom: clamp(8px, 1.5vw, 15px);
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 1;
+    min-height: 0;
+}
+
+.photo-square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-caption {
+    font-family: 'Play', sans-serif;
+    color: #ffffff;
+    font-size: clamp(15px, 1.5vw, 18px);
+    text-align: center;
+    line-height: 1.4;
+    white-space: pre-line;
+    width: 60%;
+}
+
+/* =================== */
+#what-can-section {
+    padding: 40px var(--side-pad) clamp(60px, 10vw, 120px) var(--side-pad);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.what-title {
+    font-family: 'Porsche', serif;
+    font-size: clamp(20px, 2.5vw, 48px);
+    color: #730E0E;
+    margin-bottom: clamp(20px, 2vw, 30px);
+    text-align: left;
+    line-height: 1.2;
+}
+
+.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: clamp(15px, 2vw, 30px);
+    width: 100%;
+}
+
+.icon-item {
+    flex: 0 0 calc(16.666% - (clamp(15px, 2vw, 30px) * 5 / 6));
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+/* =================== */
+.footer-container {
+    position: relative;
+    margin-top: 40px;
+}
+
+.footer-bg {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 30%;
+    height: 150px;
+    background-image: url('../imgs/bg1.png');
+    background-size: contain;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.main-footer {
+  min-height: 120px;
+  height: auto;
+  max-height: 375px;
+  background: #04037B;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  padding: 20px var(--side-pad);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  width: 100%;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 15px);
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 10px);
+  text-decoration: none;
+  color: white;
+  font-family: "Play";
+  font-size: clamp(12px, 1.2vw, 18px);
+  transition: all 0.2s ease;
+}
+
+.footer-icon {
+  width: clamp(20px, 2vw, 30px);
+  height: clamp(20px, 2vw, 30px);
+  transition: all 0.2s ease;
+}
+
+.footer-link .footer-icon {
+  color: white;
+}
+.footer-link .footer-icon .tg-icon-path {
+  fill: currentColor;
+  stroke: none;
+  stroke-width: 0;
+  transition: all 0.2s ease;
+}
+
+.footer-link:hover .footer-icon {
+  color: #9DACFF;
+}
+.footer-link:hover .footer-icon .tg-icon-path {
+  fill: currentColor;
+  stroke: white;
+  stroke-width: 1.5px;
+}
+
+.footer-link:active .footer-icon {
+  color: #B5B4F5;
+}
+.footer-link:active .footer-icon .tg-icon-path {
+  fill: currentColor;
+  stroke: none;
+  stroke-width: 0;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-link:active {
+  text-decoration: underline;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contacts-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  padding: clamp(10px, 1.5vw, 15px) clamp(25px, 3vw, 40px);
+  min-width: clamp(100px, 15vw, 200px);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.contacts-text {
+  font-family: "Play";
+  font-size: clamp(14px, 1.5vw, 22px);
+  color: #04037B;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.contacts-btn:hover {
+  background-color: #9DACFF;
+  border: 2px solid white;
+  padding: calc(clamp(10px, 1.5vw, 15px) - 2px) calc(clamp(25px, 3vw, 40px) - 2px);
+}
+
+.contacts-btn:hover .contacts-text {
+  color: #04037B;
+  text-decoration: underline;
+}
+
+.contacts-btn:active {
+  background-color: #B5B4F5;
+  border: none;
+  padding: clamp(10px, 1.5vw, 15px) clamp(25px, 3vw, 40px);
+  transform: translateY(1px);
+}
+
+.contacts-btn:active .contacts-text {
+  color: #04037B;
+  text-decoration: underline;
+}
